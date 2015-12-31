@@ -1,0 +1,120 @@
+<resources>
+    <string name="app_name">Expandable RecyclerView Sample</string>
+
+    <!-- Main screen -->
+    <string name="activity_main_vertical_linear_sample_button">Vertical Linear Sample</string>
+    <string name="activity_main_horizontal_linear_sample_button">Horizontal Linear Sample</string>
+    <string name="activity_main_grid_sample_button">Grid Layout Sample</string>
+    <string name="activity_main_header">Expanding RecyclerView</string>
+    <string name="coming_soon">Feature coming soon</string>
+
+    <!-- Linear sample -->
+    <string name="activity_vertical_linear_sample_title">Vertical Linear Sample</string>
+    <string name="activity_horizontal_linear_sample_title">Horizontal Linear Sample</string>
+    <string name="toolbar_sample_checkBox">Custom Expand Button</string>
+    <string name="child_text">Child %1$d</string>
+    <string name="second_child_text">Child %1$d_2</string>
+    <string name="third_child_text">Child %1$d_3</string>
+    <string name="child_insert_text">Child of inserted #%1$d</string>
+    <string name="parent_text">Parent %1$d</string>
+    <string name="inserted_parent_text">Inserted Parent</string>
+    <string name="arrow_contentDescription">Expand list item arrow</string>
+    <string name="item_expanded">Item %1$d expanded</string>
+    <string name="item_collapsed">Item %1$d collapsed</string>
+    <string name="expand_parent_two">Expand parent 2</string>
+    <string name="collapse_parent_two">Collapse parent 2</string>
+    <string name="expand_all">Expand all parents</string>
+    <string name="collapse_all">Collapse all parents</string>
+    <string name="add_item_to_end">Add parent to end</string>
+    <string name="remove_item_from_end">Remove parent from end</string>
+    <string name="add_item_at_pos_two">Add parent @ pos 1</string>
+    <string name="remove_second_pos">Remove parent @ pos 1</string>
+    <string name="add_child">Add child to end of 2nd parent</string>
+    <string name="remove_child">Remove child on 2nd parent from pos 1</string>
+    <string name="added_child">Child Addition %1$d</string>
+    <string name="add_multiple_parents">Add 2 Parents @ pos 1</string>
+    <string name="modify_last_parent">Modify last Parent</string>
+    <string name="modify_last_child">Modify last Child</string>
+    <string name="modified_parent_text">modified %1$d</string>
+    <string name="modified_child_text">modified Child %1$d</string>
+
+    <!-- Sample Toolbar -->
+    <string name="no_animation">No animation</string>
+    <string name="spinner_adapter_time_s">1 s</string>
+    <string name="spinner_adapter_time_ms">%1$d ms</string>
+
+
+    <string name="icon_heart">&#xf004;</string>
+    <string name="icon_pencil">&#xf040;</string>
+    <string name="iclmcalender">iClm \n Calender</string>
+    <string name="icon_meter">&#xf080;</string>
+    <string name="icon_search">&#xf002;</string>
+    <string name="icon_plan">&#xf073;</string>
+    <string name="icon_add">&#xf067;</string>
+    <string name="icon_conatinerl">&#xf0e5;</string>
+    <string name="icon_menu">&#xf039;</string>
+    <string name="icon_location">&#xf124;</string>
+    <string name="icon_check">&#xf046;</string>
+    <string name="icon_image">&#xf03e;</string>
+    <string name="icon_info">&#xf05a;</string>
+    <string name="icon_play">&#xf144;</string>
+    <string name="icon_plus">&#xf067;</string>
+    <string name="icon_menu_list">&#xf0c9;</string>
+    <string name="icon_three_dot">&#xf141;</string>
+    <string name="icon_tick">&#xf00c;</string>
+    <string name="icon_drawer">&#xf0c9;</string>
+    <string name="icon_user">&#xf007;</string>
+    <string name="icon_callavg">&#xf201;</string>
+    <string name="icon_comment">&#xf075;</string>
+    <string name="icon_calendar">&#xf073;</string>
+    <string name="icon_profile">&#xf007;</string>
+    <string name="icon_dustbin">&#xf014;</string>
+    <string name="icon_download">&#xf0ed;</string>
+    <string name="icon_arrowleft">&#xf104;</string>
+    <string name="icon_arrowright">&#xf105;</string>
+    <string name="icon_pen">&#xf040;</string>
+    <string name="icon_map">&#xf124;</string>
+    <string name="clock">&#xf017;</string>
+    <string name="thumb">&#xf164;</string>
+    <string name="mail">&#xf0e0;</string>
+    <string name="pencil">&#xf040;</string>
+    <string name="pin"> &#xf0c6;</string>
+    <string name="iconlist">&#xf03a;</string>
+    <string name="icon_exclaim">&#xf06a;</string>
+    <string name="icon_happy">&#xf118;</string>
+    <string name="icon_avg">&#xf11a;</string>
+    <string name="icon_sad">&#xf119;</string>
+    <string name="icon_cross">&#xf057;</string>
+    <string name="icon_chart">&#xf080;</string>
+    <string name="icon_triangel">&#xf04b;</string>
+    <string name="icon_table">&#xf0ce;</string>
+    <string name="icon_camera">&#xf030;</string>
+    <string name="icon_addpro">&#xf234;</string>
+    <string name="icon_paperclip">&#xf0c6;</string>
+    <string name="icon_redo">&#xf0e2;</string>
+    <string name="icon_bar">&#xf080;</string>
+    <string name="icon_pie">&#xf200;</string>
+    <string name="icon_line">&#xf201;</string>
+    <string name="icon_tri">&#xf0d9;</string>
+    <string name="icon_trash"> &#xf1f8;</string>
+    <string name="icon_tickbox">&#xf046;</string>
+    <string name="icon_marker">&#xf041;</string>
+    <string name="icon_clock">&#xf017;</string>
+    <string name="direct_right">&#xf0da;</string>
+    <string name="icon_circle">&#xf111;</string>
+    <string name="icon_rigthtri">&#xf04b;</string>
+    <string name="icon_cake">&#xf1fd;</string>
+    <string name="icon_plus_square">&#xf0fe;</string>
+    <string name="icon_edit">&#xf044;</string>
+    <string name="icon_square">&#xf096;</string>
+    <string name="icon_photo">&#xf03e;</string>
+    <string name="icon_a">&#xf031;</string>
+    <string name="icon_music">&#xf001;</string>
+    <string name="icon_video">&#xf03d;</string>
+    <string name="icon_floppy">&#xf0c7;</string>
+    <string name="icon_power_off">&#xf011;</string>
+    <string name="icon_check_round">&#xf05d;</string>
+    <string name="icon_up">&#xf0d8;</string>
+    <string name="icon_down">&#xf0d7;</string>
+
+</resources>

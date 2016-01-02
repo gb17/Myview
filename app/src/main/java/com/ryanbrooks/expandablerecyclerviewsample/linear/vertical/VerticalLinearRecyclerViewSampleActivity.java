@@ -15,8 +15,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.bignerdranch.expandablerecyclerview.Adapter.ExpandableRecyclerAdapter;
-import com.ryanbrooks.expandablerecyclerviewsample.MTP;
+import com.ryanbrooks.expandablerecyclerviewsample.PLANDATA;
 import com.ryanbrooks.expandablerecyclerviewsample.R;
+import com.ryanbrooks.expandablerecyclerviewsample.Sync;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,9 +59,14 @@ public class VerticalLinearRecyclerViewSampleActivity extends AppCompatActivity 
 
         mRecyclerView = (RecyclerView) findViewById(R.id.activity_vertical_linear_recycler_view_sample_recyclerView);
 
+
+
+
+        Sync sync = new Sync();
+        sync.executeRequestforjson(false);
+
         // Create a n ew adapter with 20 test data items
         mExpandableAdapter = new VerticalExpandableAdapter(this, setUpTestData(NUM_TEST_DATA_ITEMS));
-
         // Attach this activity to the Adapter as the ExpandCollapseListener
         mExpandableAdapter.setExpandCollapseListener(this);
 
@@ -71,8 +77,8 @@ public class VerticalLinearRecyclerViewSampleActivity extends AppCompatActivity 
         // Set the layout manager to a LinearLayout manager for vertical list
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        MTP mtp= new MTP("","","","","","","","","","","","","","","");
-        mtp.save();
+
+
     }
 
     /**
@@ -129,23 +135,47 @@ public class VerticalLinearRecyclerViewSampleActivity extends AppCompatActivity 
     private List<VerticalParent> setUpTestData(int numItems) {
         verticalParentList = new ArrayList<>();
 
-        for (int i = 0; i < numItems; i++) {
+
+        List<PLANDATA> DATEPL = PLANDATA.findWithQuery(PLANDATA.class, "Select  *  from PLANDATA WHERE BU=?  groupby PLANDATE", "2");
+
+        PLANDATA.findAll(PLANDATA.class);
+   
+
+        for (int i = 0; i <DATEPL.size(); i++) {
             List<VerticalChild> childItemList = new ArrayList<>();
 
-            VerticalChild verticalChild = new VerticalChild();
-            verticalChild.setmDrNameText("Dr Name");
-            verticalChild.setmDrSpclText("Neurologist");
-            verticalChild.setmDrClassText("Class B");
-            verticalChild.setmDrTimeText("11:30");
-            for (int j = 0; j < 5; j++)
+
+            for (int j = 0; j < 5; j++) {
+
+                VerticalChild verticalChild = new VerticalChild();
+                if (i == 2 && j == 3) {
+                    verticalChild.setmDrNameText("Dr Gaurav");
+                    verticalChild.setmDrSpclText("Cardiologist");
+                    verticalChild.setmDrClassText("Unclassified");
+                    verticalChild.setmDrTimeText("11:30");
+                } else {
+                    verticalChild.setmDrNameText("Dr Name");
+                    verticalChild.setmDrSpclText("Neurologist");
+                    verticalChild.setmDrClassText("Class B");
+                    verticalChild.setmDrTimeText("11:30");
+                }
                 childItemList.add(verticalChild);
 
+            }
             VerticalParent verticalParent = new VerticalParent();
             verticalParent.setChildItemList(childItemList);
             verticalParent.setParentNumber(i);
             verticalParent.setParentText("17");
             verticalParent.setmDayText("TUE");
             verticalParent.setMmonthText("JUNE");
+
+            if (i == 2) {
+                verticalParent.setParentNumber(i);
+                verticalParent.setParentText("19");
+                verticalParent.setmDayText("Fri");
+                verticalParent.setMmonthText("JUNE");
+            }
+
 
             verticalParent.setInitiallyExpanded(true);
 
@@ -177,8 +207,14 @@ public class VerticalLinearRecyclerViewSampleActivity extends AppCompatActivity 
     @Override
     public boolean onQueryTextChange(String query) {
         final List<VerticalParent> filteredModelList = filter(verticalParentList, query);
-      //  mExpandableAdapter.animateTo(filteredModelList);
-        mRecyclerView.scrollToPosition(0);
+        mExpandableAdapter = new VerticalExpandableAdapter(this, filteredModelList);
+        mExpandableAdapter.notifyDataSetChanged();
+        mRecyclerView.setAdapter(mExpandableAdapter);
+//
+//
+//        //  mExpandableAdapter.animateTo(filteredModelList);
+//
+//        mRecyclerView.scrollToPosition(0);
         return true;
     }
 
@@ -189,13 +225,18 @@ public class VerticalLinearRecyclerViewSampleActivity extends AppCompatActivity 
 
     private List<VerticalParent> filter(List<VerticalParent> models, String query) {
         query = query.toLowerCase();
-
         final List<VerticalParent> filteredModelList = new ArrayList<>();
         for (VerticalParent model : models) {
-
             final String text = model.getParentText().toLowerCase();
-            if (text.contains(query)) {
-                filteredModelList.add(model);
+            for (int i = 0; i < model.getChildItemList().size(); i++) {
+                VerticalChild verticalChild = model.getChildItemList().get(i);
+                String text2 = verticalChild.getmDrNameText().toLowerCase();
+                String text3 = verticalChild.getmDrClassText().toLowerCase();
+                String text4 = verticalChild.getmDrSpclText().toLowerCase();
+                if (text.contains(query) || text2.contains(query) || text3.contains(query) || text4.contains(query)) {
+                    filteredModelList.add(model);
+                    break;
+                }
             }
         }
         return filteredModelList;

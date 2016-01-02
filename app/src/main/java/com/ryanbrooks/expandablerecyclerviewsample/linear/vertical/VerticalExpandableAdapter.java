@@ -22,6 +22,8 @@ public class VerticalExpandableAdapter extends ExpandableRecyclerAdapter<Vertica
 
     private LayoutInflater mInflater;
     Context mContext;
+    List<? extends ParentListItem> OriginalParentItemList = null;
+    List<? extends ParentListItem> FilteredParentItemList = null;
 
     /**
      * Public primary constructor.
@@ -32,6 +34,8 @@ public class VerticalExpandableAdapter extends ExpandableRecyclerAdapter<Vertica
         super(parentItemList);
         mInflater = LayoutInflater.from(context);
         mContext = context;
+        OriginalParentItemList = parentItemList;
+        FilteredParentItemList = parentItemList;
     }
 
     /**

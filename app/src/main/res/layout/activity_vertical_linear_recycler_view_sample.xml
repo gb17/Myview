@@ -11,13 +11,13 @@
 
     <android.support.v7.widget.SearchView
         android:id="@+id/searchView"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="left" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/activity_vertical_linear_recycler_view_sample_recyclerView"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/selector_for_list" />
 

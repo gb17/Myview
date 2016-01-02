@@ -146,6 +146,7 @@ public class VerticalLinearRecyclerViewSampleActivity extends AppCompatActivity 
             verticalParent.setParentText("17");
             verticalParent.setmDayText("TUE");
             verticalParent.setMmonthText("JUNE");
+
             verticalParent.setInitiallyExpanded(true);
 
             verticalParentList.add(verticalParent);
